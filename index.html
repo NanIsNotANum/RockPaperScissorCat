@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors with Cat</title>
+    <link rel="icon" href="asset/img/playWithMe.png">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="main" class="center">
+
+        <div id="welcomeAndSelectGameModeDiv" class="">
+            <h1 class="title center"> Welcome to
+                <br> Rock-Paper-Scissor
+                <br> with Cats</h1>
+
+            <!--<img src="asset/img/Welcome.png" class="center" alt="Welcome!" id="welcomeCatImage" />-->
+            <img src="asset/img/playWithMe.png" class="center" alt="playWithMe!" id="" />
+            <p id="catImageCopyrightText"> All image copyright used in this app remains to facebook</p>
+            <p class="center infoText">please choose the game mode</p>
+            <button type="button" id="" class="jump center pickGameModeButton" onclick="userGameInterface.userSelectGameMode('humanVSComputer')">
+                <h3>You VS Catbot</h3>
+            </button>
+            <button type="button" id="" class="jump center pickGameModeButton" onclick="userGameInterface.userSelectGameMode('computerVSComputer')">
+                <h3>Catbot VS Catbot </h3>
+            </button>
+        </div>
+
+        <div id="gameDiv" class="is-non-display">
+            <button id="reselectGameModeButton" onclick="userGameInterface.userRequestSelectGameModeAgain()">Change Game Mode</button>
+
+            <div id="player2Div" class="playerDiv">
+                <div class="catBot2Div">
+                    <div id="catBotImageDiv">
+                        <img src="asset/img/confident.png" class="center" alt="confident!" id="player2Image" />
+                        <h1 id="player2NameText" class="playerNameText"></h1>
+                    </div>
+                    <p id="player2ScoreText" class="infoText center"></p>
+                    <p id="player2CurrentGestureText" class="infoText center"></p>
+                </div>
+            </div>
+
+
+            <div id="battleButtonAndResultDiv">
+                <h1 id="pickGestureHintText" class="infoText">Please pick a gesture!</h1>
+                <button type="button" id="battleButton" class="center jump is-non-display" onclick="userGameInterface.userClickBattle()">
+                    <h3>click to Battle </h3>
+                </button>
+
+                <button type="button" id="newRoundButton" class="center  is-non-display jump" onclick="userGameInterface.userClickNewRound()">
+                    <p id="hintText"></p>next Round->
+                </button>
+            </div>
+            <div id="player1Div" class="playerDiv">
+                <p id="player1CurrentGestureText" class="center infoText"></p>
+                <p id="player1ScoreText" class="center infoText"></p>
+                <h1 id="player1NameText" class="playerNameText"></h1>
+                <div id="humanDiv">
+                    <div id="basicGestureButtonDiv" class="center">
+                        <button type="button" class="gestureButton" id="rockButton" onclick="userGameInterface.userPickGesture('rock')">
+                            <img src="asset/img/rock.png" id="rockButtonImage" class="" alt="rock" />
+                        </button>
+                        <button type="button" class="gestureButton" id="scissorButton" onclick="userGameInterface.userPickGesture('scissor')">
+                            <img src="asset/img/scissor.png" id="scissorButtonImage" class="" alt="scissor" />
+                        </button>
+                        <button type="button" class="gestureButton" id="paperButton" onclick="userGameInterface.userPickGesture('paper')">
+                            <img src="asset/img/paper.png" id="paperButtonImage" class="" alt="paper" />
+                        </button>
+                    </div>
+                    <div id="advancedGestureButtonDiv" class="center is-non-display">
+                        <button type="button" class="gestureButton" id="lizardButton" onclick="userGameInterface.userPickGesture('lizard')">
+                            <img src="asset/img/lizard.png" id="lizardButtonImage" class="" alt="lizard" />
+                        </button>
+                        <button type="button" class="gestureButton" id="spockButton" onclick="userGameInterface.userPickGesture('spock')">
+                            <img src="asset/img/spock.png" id="spockButtonImage" class="" alt="spock" />
+                        </button>
+                        <div id="advancedLevelControlButtonDiv" class="center">
+                            <button type="button" id="backToNormalLevelButton" class="center" onclick="userGameInterface.userBackToNormalLevel()">
+                                <h3>Back to Normal level!</h3>
+                            </button>
+                            <button id="myBtn" onclick="userGameInterface.showModal()">check advanced rule</button>
+                        </div>
+                    </div>
+
+                    <p id="HowToUnlockAdvancedLevelHintText" class="center infoText">Win 5 Times to unlock advanced level!</p>
+                    <button type="button" id="unlockAdvanceLevelButton" class="center is-non-display " onclick="userGameInterface.userUnlockAdvancedLevel()">
+                        <h3>Unlock advanced level!</h3>
+                    </button>
+
+                </div>
+                <div id="catBot1Div" class="catBotDiv">
+                    <div id="catBotImageDiv">
+                        <img src="asset/img/ready.png" class="center" alt="confident!" id="player1Image" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Rock-Paper-Scissor-Lizard-Spock</h1>
+                <img src="asset/img/rule.png" width=100% height="auto" id="ruleImage" class="" alt="rule" />
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Player.js"></script>
+    <script src="js/ViewController.js"></script>
+    <script src="js/GameController.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Modal.js"></script>
+
+
+    <script src="js/UserGameInterface.js"></script>
+    <script type="application/javascript">
+        let userGameInterface = UserGameInterface();
+    </script>
+</body>
+
+</html>
